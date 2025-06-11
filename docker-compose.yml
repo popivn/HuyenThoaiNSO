@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  huyen-thoai-nso:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: huyen-thoai-nso
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - DOTNET_WATCH_RESTART_ON_RUDE_EDIT=true
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - .:/app
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+    networks:
+      - huyen-thoai-nso-network
+    restart: unless-stopped
+
+networks:
+  huyen-thoai-nso-network:
+    driver: bridge 

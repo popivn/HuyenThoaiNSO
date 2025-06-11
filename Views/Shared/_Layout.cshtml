@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Huyền Thoại NSO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HuyenThoaiNSO.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="navbar-brand-container">
+                    <img src="~/public/gif/brand.gif" alt="Huyền Thoại NSO" class="navbar-brand-img pulse-animation" />
+                    <a class="navbar-brand glow-text" asp-area="" asp-controller="Home" asp-action="Index">Huyền Thoại
+                        NSO</a>
+                </div>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav nav-pills nav-fill">
+                        @* <li class="nav-item">
+                            <a class="nav-link nav-hover-effect" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="bi bi-house-fill me-1"></i>Trang Chủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-hover-effect" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="bi bi-shield-lock-fill me-1"></i>Bảo mật
+                            </a>
+                        </li> *@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-hover-effect" href="#" id="navbarDropdown1"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-gear-fill me-1"></i>Chức năng
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark animate slideIn"
+                                aria-labelledby="navbarDropdown1">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-in-right me-2"></i>Đăng
+                                        nhập</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus-fill me-2"></i>Đăng
+                                        ký</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person-circle me-2"></i>Quản lý
+                                        tài khoản</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-sliders me-2"></i>Cài đặt</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-hover-effect" href="#" id="navbarDropdown2"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-trophy-fill me-1"></i>Xếp hạng
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark animate slideIn"
+                                aria-labelledby="navbarDropdown2">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill me-2"></i>Top người
+                                        chơi</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-people-fill me-2"></i>Top
+                                        guild</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-hdd-network-fill me-2"></i>Top
+                                        server</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-bar-chart-fill me-2"></i>Thống
+                                        kê</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-hover-effect" href="#" id="navbarDropdown3"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-newspaper me-1"></i>Bài viết
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark animate slideIn"
+                                aria-labelledby="navbarDropdown3">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle-fill me-2"></i>Tin
+                                        tức</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-book-fill me-2"></i>Hướng dẫn</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-calendar-event-fill me-2"></i>Sự
+                                        kiện</a></li>
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="bi bi-chat-square-text-fill me-2"></i>Diễn đàn</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-hover-effect" href="#" id="navbarDropdown4"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-share-fill me-1"></i>Mạng xã hội
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark animate slideIn"
+                                aria-labelledby="navbarDropdown4">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-facebook me-2"></i>Facebook</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-discord me-2"></i>Discord</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-youtube me-2"></i>Youtube</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-tiktok me-2"></i>TikTok</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="ms-auto d-flex align-items-center auth-buttons">
+                        <a href="#" class="btn btn-outline-light btn-glow me-2">
+                            <i class="bi bi-box-arrow-in-right me-1"></i>Đăng nhập
+                        </a>
+                        <a href="#" class="btn btn-primary btn-glow">
+                            <i class="bi bi-person-plus-fill me-1"></i>Đăng ký
+                        </a>
+                        <button id="theme-toggle" class="btn btn-link nav-link ms-2 theme-toggle">
+                            <i class="bi bi-moon-fill theme-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - HuyenThoaiNSO - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
