@@ -2,7 +2,124 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/home.css" asp-append-version="true" />
+}
+
+@model IEnumerable<HuyenThoaiNSO.Models.News>
+
+<div class="home-hero">
+    <div class="container">
+        <h1>Chào mừng đến với Huyền Thoại NSO</h1>
+        <p>Khám phá thế giới game đầy thú vị và hấp dẫn</p>
+    </div>
 </div>
+<div class="container" style="margin-bottom: 200px;">
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="~/public/img/slide/img1.png" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="~/public/img/slide/img2.png" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="~/public/img/slide/img3.png" alt="Slide 3">
+            </div>
+        </div>
+        <button class="slider-arrow slider-prev">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="slider-arrow slider-next">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+        <div class="slider-controls">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <div class="news-section mb-5">
+        <h2 class="text-center mb-4">Tin Tức Mới Nhất</h2>
+        <div class="row g-4">
+            @foreach (var news in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@news.ImageUrl" class="card-img-top" alt="@news.Title">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>@news.PublishDate.ToString("dd/MM/yyyy")</small>
+                                <small class="text-muted"><i class="bi bi-clock me-1"></i>@news.TimeAgo</small>
+                            </div>
+                            <h5 class="card-title">@news.Title</h5>
+                            <p class="card-text">@news.Content</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="bi bi-person me-1"></i>@news.Author</small>
+                                <a href="#" class="btn btn-primary btn-sm">Đọc thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            let currentSlide = 0;
+            const slideCount = slides.length;
+
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slideCount;
+                updateSlider();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+                updateSlider();
+            }
+
+            // Auto slide
+            let slideInterval = setInterval(nextSlide, 5000);
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                nextSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                prevSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    currentSlide = index;
+                    updateSlider();
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            });
+        });
+    </script>
+}

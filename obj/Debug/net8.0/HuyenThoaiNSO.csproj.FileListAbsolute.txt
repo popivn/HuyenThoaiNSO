@@ -58,3 +58,4 @@
 /app/obj/Debug/net8.0/HuyenThoaiNSO.pdb
 /app/obj/Debug/net8.0/HuyenThoaiNSO.genruntimeconfig.cache
 /app/obj/Debug/net8.0/ref/HuyenThoaiNSO.dll
+/app/obj/Debug/net8.0/HuyenThoaiNSO.sourcelink.json

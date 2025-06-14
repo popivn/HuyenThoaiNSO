@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/HuyenThoaiNSO.bundle.scp.css"
     },
     {
+      "Id": "/app/wwwroot/css/pages/home.css",
+      "PackagePath": "staticwebassets/css/pages/home.css"
+    },
+    {
       "Id": "/app/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
@@ -247,6 +251,18 @@
     {
       "Id": "/app/wwwroot/public/gif/brand.gif",
       "PackagePath": "staticwebassets/public/gif/brand.gif"
+    },
+    {
+      "Id": "/app/wwwroot/public/img/img1.png",
+      "PackagePath": "staticwebassets/public/img/img1.png"
+    },
+    {
+      "Id": "/app/wwwroot/public/img/img2.png",
+      "PackagePath": "staticwebassets/public/img/img2.png"
+    },
+    {
+      "Id": "/app/wwwroot/public/img/img3.png",
+      "PackagePath": "staticwebassets/public/img/img3.png"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.HuyenThoaiNSO.Microsoft.AspNetCore.StaticWebAssets.props",

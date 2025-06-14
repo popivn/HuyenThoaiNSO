@@ -1,21 +1,25 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using HuyenThoaiNSO.Models;
+using HuyenThoaiNSO.Services;
 
 namespace HuyenThoaiNSO.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly INewsService _newsService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, INewsService newsService)
     {
         _logger = logger;
+        _newsService = newsService;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var latestNews = _newsService.GetLatestNews();
+        return View(latestNews);
     }
 
     public IActionResult Privacy()
