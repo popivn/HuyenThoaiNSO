@@ -8,7 +8,11 @@ namespace HuyenThoaiNSO.Services
 {
     public interface INewsService
     {
-        IEnumerable<News> GetLatestNews();
+        List<News> GetLatestNews();
+        List<News> GetPopularNews();
+        List<News> GetTrendingNews();
+        List<News> GetNewsByCategory(string category);
+        News GetNewsById(int id);
     }
 
     public class NewsService : INewsService
@@ -28,7 +32,10 @@ namespace HuyenThoaiNSO.Services
                     Content = "Khám phá những tính năng mới thú vị trong phiên bản 2.0 của Huyền Thoại NSO.",
                     ImageUrl = "/public/img/news/news1.png",
                     Author = "Admin",
-                    PublishDate = new DateTime(2025, 3, 20, 10, 30, 0) // 20/03/2024 10:30:00
+                    CreatedAt = now,
+                    TimeAgo = "2 giờ trước",
+                    Category = "Tính năng",
+                    CategoryColor = "primary"
                 },
                 new News
                 {
@@ -37,7 +44,10 @@ namespace HuyenThoaiNSO.Services
                     Content = "Tham gia ngay sự kiện mùa hè với nhiều phần thưởng hấp dẫn và hoạt động thú vị.",
                     ImageUrl = "/public/img/news/news1.png",
                     Author = "Admin",
-                    PublishDate = new DateTime(2024, 3, 19, 15, 45, 0) // 19/03/2024 15:45:00
+                    CreatedAt = now.AddDays(-1),
+                    TimeAgo = "1 ngày trước",
+                    Category = "Sự kiện",
+                    CategoryColor = "success"
                 },
                 new News
                 {
@@ -46,7 +56,10 @@ namespace HuyenThoaiNSO.Services
                     Content = "Bí quyết và mẹo chơi game cho người mới bắt đầu trong Huyền Thoại NSO.",
                     ImageUrl = "/public/img/news/news1.png",
                     Author = "Admin",
-                    PublishDate = new DateTime(2024, 3, 18, 9, 15, 0) // 18/03/2024 09:15:00
+                    CreatedAt = now.AddDays(-2),
+                    TimeAgo = "2 ngày trước",
+                    Category = "Hot",
+                    CategoryColor = "danger"
                 },
                 new News
                 {
@@ -55,14 +68,17 @@ namespace HuyenThoaiNSO.Services
                     Content = "Bí quyết và mẹo chơi game cho người mới bắt đầu trong Huyền Thoại NSO.",
                     ImageUrl = "/public/img/news/news1.png",
                     Author = "Admin",
-                    PublishDate = new DateTime(2024, 3, 18, 9, 15, 0) // 18/03/2024 09:15:00
+                    CreatedAt = now.AddDays(-3),
+                    TimeAgo = "3 ngày trước",
+                    Category = "Hot",
+                    CategoryColor = "danger"
                 }
             };
         }
 
-        public IEnumerable<News> GetLatestNews()
+        public List<News> GetLatestNews()
         {
-            return _news.OrderByDescending(n => n.PublishDate)
+            return _news.OrderByDescending(n => n.CreatedAt)
                        .Select(n => new News
                        {
                            Id = n.Id,
@@ -70,9 +86,31 @@ namespace HuyenThoaiNSO.Services
                            Content = n.Content,
                            ImageUrl = n.ImageUrl,
                            Author = n.Author,
-                           PublishDate = n.PublishDate,
-                           TimeAgo = n.PublishDate.GetTimeAgo() // Tính toán TimeAgo dựa trên timestamp thực
-                       });
+                           CreatedAt = n.CreatedAt,
+                           TimeAgo = n.CreatedAt.GetTimeAgo(),
+                           Category = n.Category,
+                           CategoryColor = n.CategoryColor
+                       }).ToList();
+        }
+
+        public List<News> GetPopularNews()
+        {
+            return _news.Where(n => n.Category == "Sự kiện").ToList();
+        }
+
+        public List<News> GetTrendingNews()
+        {
+            return _news.Where(n => n.Category == "Hot").ToList();
+        }
+
+        public List<News> GetNewsByCategory(string category)
+        {
+            return _news.Where(n => n.Category == category).ToList();
+        }
+
+        public News GetNewsById(int id)
+        {
+            return _news.FirstOrDefault(n => n.Id == id);
         }
     }
-} 
+}

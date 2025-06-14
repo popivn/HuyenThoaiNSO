@@ -1,0 +1,64 @@
+@model HuyenThoaiNSO.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+        <form asp-action="Register" method="post" id="registerForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label for="Username" class="control-label">Tên đăng nhập</label>
+                <input name="Username" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label for="Password" class="control-label">Mật khẩu</label>
+                <input name="Password" type="password" class="form-control" id="password" />
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="ConfirmPassword" class="control-label">Nhập lại mật khẩu</label>
+                <input name="ConfirmPassword" type="password" class="form-control" id="confirmPassword" />
+                <span class="text-danger" id="confirmPasswordError"></span>
+            </div>
+            
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Đăng ký</button>
+            </div>
+        </form>
+        
+        <div class="text-center mt-3">
+            <p>Đã có tài khoản? <a asp-action="Login">Đăng nhập</a></p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function() {
+            $('#registerForm').submit(function(e) {
+                var password = $('#password').val();
+                var confirmPassword = $('#confirmPassword').val();
+                
+                console.log('Password:', password);
+                console.log('Confirm Password:', confirmPassword);
+                
+                if (password !== confirmPassword) {
+                    e.preventDefault();
+                    $('#confirmPasswordError').text('Mật khẩu không khớp');
+                    console.log('Passwords do not match');
+                } else {
+                    $('#confirmPasswordError').text('');
+                    console.log('Passwords match');
+                }
+            });
+        });
+    </script>
+} 
