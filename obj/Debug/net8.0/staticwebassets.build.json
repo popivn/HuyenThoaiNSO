@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k9EQkwreZRvaM2Fc0lZ1gfug1NFuwdO7PQP6kQmAiBk=",
+  "Hash": "I60F10Iijr1m5yOt+S+/X/43b9E+2RWFcL6tAwDyrTY=",
   "Source": "HuyenThoaiNSO",
   "BasePath": "_content/HuyenThoaiNSO",
   "Mode": "Default",
@@ -1233,12 +1233,12 @@
       "OriginalItemSpec": "wwwroot/public/gif/brand.gif"
     },
     {
-      "Identity": "/app/wwwroot/public/img/img1.png",
+      "Identity": "/app/wwwroot/public/img/news/news1.png",
       "SourceId": "HuyenThoaiNSO",
       "SourceType": "Discovered",
       "ContentRoot": "/app/wwwroot/",
       "BasePath": "_content/HuyenThoaiNSO",
-      "RelativePath": "public/img/img1.png",
+      "RelativePath": "public/img/news/news1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1249,15 +1249,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/public/img/img1.png"
+      "OriginalItemSpec": "wwwroot/public/img/news/news1.png"
     },
     {
-      "Identity": "/app/wwwroot/public/img/img2.png",
+      "Identity": "/app/wwwroot/public/img/slide/img1.png",
       "SourceId": "HuyenThoaiNSO",
       "SourceType": "Discovered",
       "ContentRoot": "/app/wwwroot/",
       "BasePath": "_content/HuyenThoaiNSO",
-      "RelativePath": "public/img/img2.png",
+      "RelativePath": "public/img/slide/img1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1268,15 +1268,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/public/img/img2.png"
+      "OriginalItemSpec": "wwwroot/public/img/slide/img1.png"
     },
     {
-      "Identity": "/app/wwwroot/public/img/img3.png",
+      "Identity": "/app/wwwroot/public/img/slide/img2.png",
       "SourceId": "HuyenThoaiNSO",
       "SourceType": "Discovered",
       "ContentRoot": "/app/wwwroot/",
       "BasePath": "_content/HuyenThoaiNSO",
-      "RelativePath": "public/img/img3.png",
+      "RelativePath": "public/img/slide/img2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1287,7 +1287,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/public/img/img3.png"
+      "OriginalItemSpec": "wwwroot/public/img/slide/img2.png"
+    },
+    {
+      "Identity": "/app/wwwroot/public/img/slide/img3.png",
+      "SourceId": "HuyenThoaiNSO",
+      "SourceType": "Discovered",
+      "ContentRoot": "/app/wwwroot/",
+      "BasePath": "_content/HuyenThoaiNSO",
+      "RelativePath": "public/img/slide/img3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/public/img/slide/img3.png"
     }
   ]
 }

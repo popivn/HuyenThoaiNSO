@@ -253,16 +253,20 @@
       "PackagePath": "staticwebassets/public/gif/brand.gif"
     },
     {
-      "Id": "/app/wwwroot/public/img/img1.png",
-      "PackagePath": "staticwebassets/public/img/img1.png"
+      "Id": "/app/wwwroot/public/img/news/news1.png",
+      "PackagePath": "staticwebassets/public/img/news/news1.png"
     },
     {
-      "Id": "/app/wwwroot/public/img/img2.png",
-      "PackagePath": "staticwebassets/public/img/img2.png"
+      "Id": "/app/wwwroot/public/img/slide/img1.png",
+      "PackagePath": "staticwebassets/public/img/slide/img1.png"
     },
     {
-      "Id": "/app/wwwroot/public/img/img3.png",
-      "PackagePath": "staticwebassets/public/img/img3.png"
+      "Id": "/app/wwwroot/public/img/slide/img2.png",
+      "PackagePath": "staticwebassets/public/img/slide/img2.png"
+    },
+    {
+      "Id": "/app/wwwroot/public/img/slide/img3.png",
+      "PackagePath": "staticwebassets/public/img/slide/img3.png"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.HuyenThoaiNSO.Microsoft.AspNetCore.StaticWebAssets.props",
