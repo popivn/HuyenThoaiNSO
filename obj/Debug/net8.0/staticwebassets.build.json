@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cBdSUeokoNOtELC6F2KeHKzeQ8RF3pzfnHQYL0zouRI=",
+  "Hash": "rXG6c32YB5yiLdxjI60sRFskcnPSUBMGQjavgvGt4AA=",
   "Source": "HuyenThoaiNSO",
   "BasePath": "_content/HuyenThoaiNSO",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\HuyenThoaiNSO.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\pages\\giftcode.css",
+      "SourceId": "HuyenThoaiNSO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\",
+      "BasePath": "_content/HuyenThoaiNSO",
+      "RelativePath": "css/pages/giftcode.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\pages\\giftcode.css"
     },
     {
       "Identity": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\pages\\home.css",

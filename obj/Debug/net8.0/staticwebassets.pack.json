@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\HuyenThoaiNSO.bundle.scp.css"
     },
     {
+      "Id": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\pages\\giftcode.css",
+      "PackagePath": "staticwebassets\\css\\pages\\giftcode.css"
+    },
+    {
       "Id": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\pages\\home.css",
       "PackagePath": "staticwebassets\\css\\pages\\home.css"
     },

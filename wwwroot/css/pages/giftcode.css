@@ -1,0 +1,86 @@
+/* Card styles */
+.card {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+.table {
+    color: var(--primary-text);
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-text);
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-text);
+}
+
+.table tbody tr:hover {
+    background-color: var(--secondary-bg);
+}
+
+/* List styles */
+.none-style {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.none-style li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: var(--primary-text);
+}
+
+.none-style li:last-child {
+    margin-bottom: 0;
+}
+
+.none-style img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.75rem;
+    object-fit: contain;
+}
+
+/* Text styles */
+.post-date {
+    font-size: 0.9rem;
+    color: var(--primary-text);
+    opacity: 0.8;
+}
+
+.post-content {
+    font-size: 0.95rem;
+    color: var(--primary-text);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table thead th,
+    .table tbody td {
+        padding: 0.75rem;
+    }
+
+    .none-style img {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
+    }
+}
