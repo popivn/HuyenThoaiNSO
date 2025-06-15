@@ -1,0 +1,94 @@
+/* Download cards */
+.download-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.download-card:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.download-card:hover i {
+    color: #fff;
+}
+
+.download-card i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* IOS download buttons */
+.download-button-ios {
+    display: block;
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    background-color: #ffc107; /* Yellow color from image */
+    color: var(--primary-text);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid #ffc107;
+}
+
+.download-button-ios:hover {
+    background-color: #e0a800;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Instructions */
+.card .text-primary {
+    color: var(--primary-color) !important;
+}
+
+.card p {
+    color: var(--primary-text);
+}
+
+.card a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+    color: var(--hover-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .download-card,
+    .download-button-ios {
+        padding: 1rem;
+    }
+
+    .download-card i {
+        font-size: 2.5rem;
+    }
+
+    .download-card .fw-bold,
+    .download-button-ios {
+        font-size: 0.9rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+} 

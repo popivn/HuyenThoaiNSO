@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Tải Game";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/download.css" asp-append-version="true" />
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card p-4 mb-4">
+                <div class="row row-cols-2 row-cols-md-4 g-3 text-center">
+                    <div class="col">
+                        <a href="#" class="download-card">
+                            <i class="bi bi-controller display-4"></i>
+                            <div class="fw-bold mt-2">Bản Jar</div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="download-card">
+                            <i class="bi bi-file-earmark-zip display-4"></i>
+                            <div class="fw-bold mt-2">Bản jar Convert zip</div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="download-card">
+                            <i class="bi bi-android2 display-4"></i>
+                            <div class="fw-bold mt-2">Bản ANDROID</div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="download-card">
+                            <i class="bi bi-laptop display-4"></i>
+                            <div class="fw-bold mt-2">Bản PC</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-4 mb-4">
+                <div class="fw-bold fs-5 text-center mb-3">Phiên Bản Dành Cho IOS</div>
+                <div class="text-center mb-4">TestFlight</div>
+                <div class="row justify-content-center g-3">
+                    <div class="col-6 col-md-4">
+                        <a href="#" class="download-button-ios">
+                            TestFlight Nso<br>148x6
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="#" class="download-button-ios">
+                            TestFlight Nso<br>188x6
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-4">
+                <div class="fw-bold fs-5 text-center mb-3 text-primary">
+                    <i class="bi bi-flower1 me-2"></i>Hướng dẫn cách cài đặt
+                </div>
+                <div class="px-3">
+                    <p class="mb-2">Bước 1: Tải Microemulator: <a href="#" class="text-danger">AngelChipEmulator.jar</a></p>
+                    <p class="mb-2">Bước 2: Tải , cài đặt JDK: <a href="#" class="text-danger">jdk-8u202-windows-i586.exe</a></p>
+                    <p class="mb-2">Bước 3: Tải một trong các phiên bản bên trên (Gợi ý: bản 148)</p>
+                    <p class="mb-2">Bước 5: Mở ứng dụng AngelChipEmulator.jar</p>
+                    <p class="mb-2">Bước 6: Kéo file game có đuôi .jar vào và bấm Start</p>
+                    <p class="mb-0">Trước khi bấm Start các bạn cần chỉnh lại kích thước sao cho dễ chơi nhất.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -16,12 +16,15 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
             <div class="container">
                 <div class="d-flex align-items-center">
-                    <img src="~/public/gif/brand.gif" alt="Huyền Thoai NSO" class="me-2" style="height: 40px; border-radius: 8px;" />
-                    <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Huyền Thoại NSO</a>
+                    <a class="navbar-brand-container" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/public/gif/brand.gif" alt="Huyền Thoai NSO" class="navbar-brand-img me-2" />
+                        <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">HTNSO</a>
+                        <a class="nav-link" asp-controller="Download" asp-action="Index"><i class="bi bi-download me-1"></i>Tải Game</a>
+                    </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -57,9 +60,6 @@
                             </a>
                             <ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown3">
                                 <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle-fill me-2"></i>Tin tức</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-book-fill me-2"></i>Hướng dẫn</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-calendar-event-fill me-2"></i>Sự kiện</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-chat-square-text-fill me-2"></i>Diễn đàn</a></li>
                             </ul>
                         </li>
 
@@ -68,10 +68,11 @@
                                 <i class="bi bi-share-fill me-1"></i>Mạng xã hội
                             </a>
                             <ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown4">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
+                                <li><a class="dropdown-item" href="https://www.facebook.com/profile.php?id=61568338782528"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="bi bi-discord me-2"></i>Discord</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="bi bi-youtube me-2"></i>Youtube</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-tiktok me-2"></i>TikTok</a></li>
+                                <li><a class="dropdown-item" href="https://www.tiktok.com/@@huyenthoainso.com"><i class="bi bi-tiktok me-2"></i>TikTok</a></li>
+                                <li><a class="dropdown-item" href="https://zalo.me/g/hcddiz001"><i class="bi bi-chat-dots-fill me-2"></i>Zalo</a></li>
                             </ul>
                         </li>
                     </ul>
