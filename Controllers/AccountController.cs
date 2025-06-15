@@ -27,28 +27,25 @@ namespace HuyenThoaiNSO.Controllers
         {
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
-                TempData["Error"] = "Vui lòng nhập đầy đủ thông tin";
-                return RedirectToAction("Login");
+                return Json(new { success = false, message = "Vui lòng nhập đầy đủ thông tin" });
             }
 
             var user = _context.Users.FirstOrDefault(u => u.Username == Username);
             if (user == null)
             {
-                TempData["Error"] = "Tài khoản không tồn tại";
-                return RedirectToAction("Login");
+                return Json(new { success = false, message = "Tài khoản không tồn tại" });
             }
 
             if (!VerifyPassword(Password, user.Password))
             {
-                TempData["Error"] = "Mật khẩu không đúng";
-                return RedirectToAction("Login");
+                return Json(new { success = false, message = "Mật khẩu không đúng" });
             }
 
             // Lưu thông tin đăng nhập vào session
             HttpContext.Session.SetString("Username", user.Username);
             HttpContext.Session.SetInt32("UserId", user.Id);
 
-            return RedirectToAction("Index", "Home");
+            return Json(new { success = true });
         }
 
         // GET: /Account/Register
@@ -63,14 +60,12 @@ namespace HuyenThoaiNSO.Controllers
         {
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
-                TempData["Error"] = "Vui lòng nhập đầy đủ thông tin";
-                return RedirectToAction("Register");
+                return Json(new { success = false, message = "Vui lòng nhập đầy đủ thông tin" });
             }
 
             if (_context.Users.Any(u => u.Username == Username))
             {
-                TempData["Error"] = "Tên đăng nhập đã tồn tại";
-                return RedirectToAction("Register");
+                return Json(new { success = false, message = "Tên đăng nhập đã tồn tại" });
             }
 
             // Tạo user mới
@@ -85,8 +80,7 @@ namespace HuyenThoaiNSO.Controllers
             _context.Users.Add(user);
             _context.SaveChanges();
 
-            TempData["Success"] = "Đăng ký thành công! Vui lòng đăng nhập.";
-            return RedirectToAction("Login");
+            return Json(new { success = true });
         }
 
         public IActionResult Logout()

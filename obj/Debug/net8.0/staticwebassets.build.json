@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wV8RmY5rGO6TlQbQOLLqmuMqa8rA38ai8MmSicKu/2U=",
+  "Hash": "cBdSUeokoNOtELC6F2KeHKzeQ8RF3pzfnHQYL0zouRI=",
   "Source": "HuyenThoaiNSO",
   "BasePath": "_content/HuyenThoaiNSO",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\pages\\home.css"
+    },
+    {
+      "Identity": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\pages\\ranking.css",
+      "SourceId": "HuyenThoaiNSO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\",
+      "BasePath": "_content/HuyenThoaiNSO",
+      "RelativePath": "css/pages/ranking.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\pages\\ranking.css"
     },
     {
       "Identity": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\site.css",

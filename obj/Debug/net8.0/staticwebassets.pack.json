@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\pages\\home.css"
     },
     {
+      "Id": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\pages\\ranking.css",
+      "PackagePath": "staticwebassets\\css\\pages\\ranking.css"
+    },
+    {
       "Id": "C:\\WorkSpace\\C#\\HuyenThoai_NSO\\HuyenThoaiNSO\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

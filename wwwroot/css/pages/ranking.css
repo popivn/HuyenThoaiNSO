@@ -1,0 +1,148 @@
+/* Card styles */
+.card {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Tab styles */
+.nav-tabs {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-tabs .nav-link {
+    color: var(--secondary-text);
+    border: none;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--primary-text);
+    border: none;
+    background-color: var(--secondary-bg);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Table styles */
+.table {
+    color: var(--primary-text);
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--secondary-text);
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table tbody tr:hover {
+    background-color: var(--secondary-bg);
+}
+
+/* Trophy icon for top 3 */
+.bi-trophy-fill {
+    color: #ffd700;
+}
+
+/* Pagination styles */
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-link {
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
+    border-color: var(--border-color);
+    padding: 0.5rem 1rem;
+}
+
+.page-link:hover {
+    color: var(--hover-color);
+    background-color: var(--secondary-bg);
+    border-color: var(--border-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Period buttons */
+.btn-group .btn {
+    color: var(--primary-text);
+    border-color: var(--border-color);
+    padding: 0.5rem 1rem;
+}
+
+.btn-group .btn:hover {
+    background-color: var(--secondary-bg);
+}
+
+.btn-group .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-group .btn-primary:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+/* Animation */
+.animate {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slideIn {
+    animation-name: slideIn;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-tabs .nav-link {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 0.75rem;
+    }
+
+    .btn-group .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+} 

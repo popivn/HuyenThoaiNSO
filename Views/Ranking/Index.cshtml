@@ -1,0 +1,133 @@
+@{
+    ViewData["Title"] = "Bảng xếp hạng";
+    var activeTab = ViewData["ActiveTab"] as string ?? "players";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/ranking.css" asp-append-version="true" />
+}
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-transparent border-0">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link @(activeTab == "players" ? "active" : "")" data-bs-toggle="tab" href="#topPlayers">
+                                <i class="bi bi-person-fill me-2"></i>Top Cao Thủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(activeTab == "guilds" ? "active" : "")" data-bs-toggle="tab" href="#topGuilds">
+                                <i class="bi bi-people-fill me-2"></i>Top Gia Tộc
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(activeTab == "classes" ? "active" : "")" data-bs-toggle="tab" href="#topClasses">
+                                <i class="bi bi-hdd-network-fill me-2"></i>Top Class
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(activeTab == "wealth" ? "active" : "")" data-bs-toggle="tab" href="#topWealth">
+                                <i class="bi bi-bar-chart-fill me-2"></i>Top Tài Phú
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade @(activeTab == "players" ? "show active" : "")" id="topPlayers">
+                            @await Html.PartialAsync("_RankingTable", new RankingTableModel
+                            {
+                                Id = "players",
+                                Title = "Top Cao Thủ",
+                                Icon = "bi-person-fill",
+                                Columns = new List<RankingColumn>
+                                {
+                                    new RankingColumn { Key = "username", Title = "Tên người chơi", Type = "text" },
+                                    new RankingColumn { Key = "level", Title = "Cấp độ", Type = "text" },
+                                    new RankingColumn { Key = "balance", Title = "Tài sản", Type = "text" }
+                                },
+                                Items = new List<RankingItem>()
+                            })
+                        </div>
+                        <div class="tab-pane fade @(activeTab == "guilds" ? "show active" : "")" id="topGuilds">
+                            @await Html.PartialAsync("_RankingTable", new RankingTableModel
+                            {
+                                Id = "guilds",
+                                Title = "Top Gia Tộc",
+                                Icon = "bi-people-fill",
+                                Columns = new List<RankingColumn>
+                                {
+                                    new RankingColumn { Key = "name", Title = "Tên gia tộc", Type = "text" },
+                                    new RankingColumn { Key = "members", Title = "Số thành viên", Type = "text" },
+                                    new RankingColumn { Key = "level", Title = "Cấp độ", Type = "text" }
+                                },
+                                Items = new List<RankingItem>()
+                            })
+                        </div>
+                        <div class="tab-pane fade @(activeTab == "classes" ? "show active" : "")" id="topClasses">
+                            @await Html.PartialAsync("_RankingTable", new RankingTableModel
+                            {
+                                Id = "classes",
+                                Title = "Top Class",
+                                Icon = "bi-hdd-network-fill",
+                                Columns = new List<RankingColumn>
+                                {
+                                    new RankingColumn { Key = "name", Title = "Tên class", Type = "text" },
+                                    new RankingColumn { Key = "players", Title = "Số người chơi", Type = "text" },
+                                    new RankingColumn { Key = "winRate", Title = "Tỷ lệ thắng", Type = "text" }
+                                },
+                                Items = new List<RankingItem>()
+                            })
+                        </div>
+                        <div class="tab-pane fade @(activeTab == "wealth" ? "show active" : "")" id="topWealth">
+                            @await Html.PartialAsync("_RankingTable", new RankingTableModel
+                            {
+                                Id = "wealth",
+                                Title = "Top Tài Phú",
+                                Icon = "bi-bar-chart-fill",
+                                Columns = new List<RankingColumn>
+                                {
+                                    new RankingColumn { Key = "username", Title = "Tên người chơi", Type = "text" },
+                                    new RankingColumn { Key = "balance", Title = "Tài sản", Type = "text" },
+                                    new RankingColumn { Key = "rank", Title = "Xếp hạng", Type = "text" }
+                                },
+                                Items = new List<RankingItem>()
+                            })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Khởi tạo bảng xếp hạng khi trang được tải
+        document.addEventListener('DOMContentLoaded', function() {
+            const rankingTypes = ['players', 'guilds', 'classes', 'wealth'];
+            rankingTypes.forEach(type => {
+                fetch(`/api/ranking/${type}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        updateRankingTable(type, data);
+                    });
+            });
+        });
+
+        // Cập nhật bảng xếp hạng khi chuyển tab
+        document.querySelectorAll('a[data-bs-toggle="tab"]').forEach(tab => {
+            tab.addEventListener('shown.bs.tab', function(e) {
+                const type = e.target.getAttribute('href').replace('#', '').replace('top', '').toLowerCase();
+                fetch(`/api/ranking/${type}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        updateRankingTable(type, data);
+                    });
+            });
+        });
+    </script>
+} 
